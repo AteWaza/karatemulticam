@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Lecteur Multicaméra - Karaté Ate-Waza-Kan</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            padding: 20px;
+        }
+        #logo-container {
+            margin-bottom: 10px;
+        }
+        #karate-logo {
+            width: 120px;
+            height: auto;
+            border-radius: 50%;
+            border: 3px solid #b22222;
+            box-shadow: 0 0 10px rgba(0,0,0,0.3);
+        }
+        h1 {
+            color: #b22222;
+            margin-bottom: 20px;
+        }
+        .video-frame {
+            display: none;
+            width: 100%;
+            max-width: 800px;
+            height: 450px;
+            margin: 0 auto;
+            border: none;
+        }
+        .video-frame.active {
+            display: block;
+        }
+        #controls {
+            margin-top: 15px;
+        }
+        button {
+            padding: 10px 15px;
+            margin: 5px;
+            font-size: 16px;
+            background-color: #b22222;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #8b0000;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="logo-container">
+            <img src="logo.png" alt="Logo Karaté Ate-Waza-Kan" id="karate-logo">
+        </div>
+
+        <h1>🎥 Lecteur Multicaméra</h1>
+
+        <div id="video-container">
+            https://www.youtube.com/embed/ws9reT8X-EM
+            https://www.youtube.com/embed/A1On5EBgzjI
+            https://www.youtube.com/embed/KBG2dhFvkJo
+        </div>
+
+        <div id="controls">
+            <button onclick="switchAngle(1)">Angle 1</button>
+            <button onclick="switchAngle(2)">Angle 2</button>
+            <button onclick="switchAngle(3)">Angle 3</button>
+        </div>
+    </div>
+
+    <script>
+        function switchAngle(index) {
+            for (let i = 1; i <= 3; i++) {
+                const iframe = document.getElementById('iframe' + i);
+                iframe.classList.toggle('active', i === index);
+            }
+        }
+    </script>
+</body>
+</html>
